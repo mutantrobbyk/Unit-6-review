@@ -26,7 +26,10 @@ app.post('/api/register', authCtrl.register);
 app.post('/api/logout', authCtrl.logout);
 app.get('/api/user', authCtrl.getUser);
 
+//manipulating user posts endpoints
 app.get('/api/posts/:id', ctrl.getPosts);
+app.post('/api/posts/:id', ctrl.addPost)
+app.delete('/api/posts/:postId/:userId', ctrl.deletePost)
 
 const port = SERVER_PORT;
 app.listen(port, () => console.log(`Server running on ${port}`));
